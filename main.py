@@ -308,10 +308,12 @@ def get_time():
     """
     获取时间戳
     """
-    url = 'http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp'
+    url = 'https://cube.meituan.com/ipromotion/cube/toc/component/base/getServerCurrentTime'
+    #url = 'http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp'
     response = requests.get(url, headers=headers).json()
-    t = response['data']['t']
+    t = response['data']
     return t
+    
 
 
 def get_app_token(login_token):
